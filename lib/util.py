@@ -1,3 +1,21 @@
+"""
+util.py
+
+This module contains utility functions for loading settings from a JSON file and establishing MQTT connections.
+
+Functions:
+    - load_settings: Loads the settings from a 'settings.json' file and returns the data as a dictionary.
+    - establish_mqtt_connection: Tries to establish a connection to an MQTT broker using the provided settings. If the connection fails, it blinks the LED bargraph and resets the device.
+
+Imports:
+    - machine: Access to hardware-specific features
+    - utime: Functions for time-related tasks
+    - ujson: JSON encoder and decoder
+    - umqtt.simple: MQTT client
+    - network: Network configuration
+    - bargraph: Class for controlling the LED bargraph
+"""
+
 import ujson
 from utime import sleep
 import network

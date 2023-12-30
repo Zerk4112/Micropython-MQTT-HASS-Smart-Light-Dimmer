@@ -1,3 +1,18 @@
+"""
+bargraph.py
+
+This module contains the Bargraph class which is used to control a LED bargraph.
+
+The Bargraph class has methods to blink, fade in, fade out, switch on/off LEDs based on certain conditions.
+
+Class:
+    - Bargraph: Represents a LED bargraph. It has methods to control the LEDs in various ways.
+
+Imports:
+    - machine: Access to hardware-specific features like Pin
+    - utime: Functions for time-related tasks like sleep
+"""
+
 from machine import Pin
 from utime import sleep
 

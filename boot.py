@@ -1,3 +1,25 @@
+"""
+boot.py
+
+This script initializes the hardware and network connections for a device.
+
+It starts by loading settings from a JSON file, then initializes a rotary encoder and a LED bargraph.
+Afterwards, it blinks the bargraph to indicate that the device is active.
+
+The script then establishes WiFi and MQTT connections using the loaded settings.
+
+Finally, it initializes a button for the rotary encoder and sets up variables for tracking changes in the rotary encoder's value.
+
+This script is executed every time the device boots up.
+
+Imports:
+    - machine: Access to hardware-specific features
+    - utime: Functions for time-related tasks
+    - rotary_irq_esp: Driver for the rotary encoder
+    - util: Utility functions for network connections
+    - bargraph: Class for controlling the LED bargraph
+"""
+
 from machine import Pin
 from utime import sleep
 from rotary_irq_esp import RotaryIRQ
