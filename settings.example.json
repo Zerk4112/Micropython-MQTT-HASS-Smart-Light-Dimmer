@@ -1,0 +1,9 @@
+{
+    "mqtt_broker": "0.0.0.0",
+    "mqtt_port": 1883,
+    "mqtt_user": "mqtt_user",
+    "mqtt_password": "mqtt_user_password",
+    "mqtt_base_topic": "devices/light_dimmer/",
+    "wifi_ssid": "SSID_NAME_HERE",
+    "wifi_password": "WIFI_PASSWORD_HERE"
+}
