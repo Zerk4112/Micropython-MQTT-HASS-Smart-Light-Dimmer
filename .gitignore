@@ -1,5 +1,7 @@
 # CUSTOM
 settings.json
+pymakr.conf
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
