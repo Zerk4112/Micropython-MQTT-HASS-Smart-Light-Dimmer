@@ -52,4 +52,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Zach Covington - zerkdev09@gmail.com
+Zach Covington - <zerkdev09@gmail.com>
