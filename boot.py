@@ -33,7 +33,7 @@ settings = load_settings()
 rotary_encoder = RotaryIRQ(pin_num_clk=33, 
     pin_num_dt=32, 
     min_val=0, 
-    max_val=100, 
+    max_val=32, 
     reverse=True, 
     range_mode=RotaryIRQ.RANGE_BOUNDED)
 
@@ -61,7 +61,7 @@ pin_index=0
 # Main loop
 try:
     while True:
-        pin_index = map_value(val_new,0,100,0,9)
+        pin_index = map_value(val_new,0,32,0,9)
         # Check if the button is pressed
         if button.value()==0 and not button_held:
 
@@ -88,7 +88,7 @@ try:
 
             # If the rotary encoder has changed, send the new value to MQTT
             if val_old!=val_new:
-                client.publish("{}/brightness".format(settings['mqtt_base_topic']), str(map_value(val_new,0,100,1,255)))
+                client.publish("{}/brightness".format(settings['mqtt_base_topic']), str(map_value(val_new,0,32,1,100)))
                 val_old=val_new
                 print('changed: {}'.format(val_new))
             # Update the bargraph
