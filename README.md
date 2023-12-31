@@ -44,6 +44,8 @@ The `lib` folder contains the following modules:
 
 ## Wiring Instructions
 
+![Wiring Diagram](https://github.com/Zerk4112/Micropython-MQTT-HASS-Smart-Light-Dimmer/blob/main/img/v1%20Wiring%20Diagram.png?raw=true)
+
 1. **Rotary Encoder:**
    - Connect CLK (Clock) pin of the rotary encoder to GPIO 33 on the ESP32.
    - Connect DT (Data) pin of the rotary encoder to GPIO 32 on the ESP32.
