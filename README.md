@@ -42,13 +42,44 @@ The `lib` folder contains the following modules:
 - `mqtt.py`: Contains the MQTT class which is used to establish an MQTT connection and publish/subscribe to topics, from public repository: [micropython/umqtt.simple](https://github.com/micropython/micropython-lib/tree/master/micropython/umqtt.simple).
 - `util.py`: Contains utility functions for loading settings from a JSON file and establishing MQTT connections.
 
+## Wiring Instructions
+
+1. **Rotary Encoder:**
+   - Connect CLK (Clock) pin of the rotary encoder to GPIO 33 on the ESP32.
+   - Connect DT (Data) pin of the rotary encoder to GPIO 32 on the ESP32.
+   - Connect SW (Switch/Button) pin of the rotary encoder to GPIO 15 on the ESP32.
+
+2. **LED Bar Graph:**
+   - Connect the first LED pin of the bar graph to GPIO 19 on the ESP32.
+   - Connect the second LED pin of the bar graph to GPIO 21 on the ESP32.
+   - Continue this pattern for the remaining LED pins and ESP32 pins (22, 23, 18, 5, 17, 16, 4, 2).
+
+3. **Resistors:**
+   - Connect a 220-ohm resistor from each LED pin on the bar graph to the 3V3 (3.3V) pin on the ESP32.
+   - Connect the other end of each resistor to the corresponding LED pin.
+
+4. **Power Supply:**
+   - Connect the GND (Ground) pin of the rotary encoder to the GND (Ground) pin on the ESP32.
+   - Connect the 3V3 (3.3V) pin of the rotary encoder to the 3V3 (3.3V) pin on the ESP32.
+
+**Note:**
+
+- The rotary encoder includes a built-in push button, and it's connected to GPIO 15.
+- The resistors are wired to the 3V3 line, with the LEDs sinking the current. Connect the resistors to the anode (longer leg) of each LED, and the cathodes (shorter legs) to the corresponding pins on the ESP32.
+
+By following these instructions and the provided diagram, you should be able to wire your smart light dimmer successfully. Ensure a common ground among all components and check the power requirements of your LED bar graph to avoid overloading the ESP32.
+
 ## Contributing
 
 Any contributions you make are greatly appreciated.
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the GNU v3 License. See `LICENSE` for more information.
+
+## Useful Links
+
+[Wiki.fluidnc.com - ESP32 Dev Kit Pin Reference](http://wiki.fluidnc.com/en/hardware/esp32_pin_reference)
 
 ## Contact
 
