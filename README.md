@@ -71,6 +71,53 @@ The `lib` folder contains the following modules:
 
 By following these instructions and the provided diagram, you should be able to wire your smart light dimmer successfully. Ensure a common ground among all components and check the power requirements of your LED bar graph to avoid overloading the ESP32.
 
+Certainly! Here's the updated Node-Red setup section with a note about customizing the brightness values in `boot.py`:
+
+## Node-Red Setup
+
+To seamlessly integrate the Smart Bulb Dimmer with Node-Red and Home Assistant, follow these steps:
+
+1. Install Node-Red on your preferred platform or server.
+
+2. Import the provided Node-Red Flows into your Node-Red instance. You can find these flows in the [node-red-flows](/node-red-flows) folder.
+
+3. Customize the flows as needed. While all error handling is managed on the device, feel free to check the topics for each MQTT In node in the flows. Ensure the topics match your configuration.
+
+### Flow Descriptions
+
+#### 1. Brightness Control Flow
+
+This flow manages brightness control. It listens to the `{{base_topic}}/brightness` MQTT topic. Note that the actual mapping of brightness values occurs in the Micropython script (`boot.py`). Ensure that the values sent via MQTT align with your smart lights' requirements.
+
+![Brightness Control Flow](https://github.com/Zerk4112/Micropython-MQTT-HASS-Smart-Light-Dimmer/blob/dev/img/Node-Red%20Flow%20-%20Brightness.png?raw=true)
+
+#### 2. Power Control Flow
+
+The Power Control Flow manages the power state of the smart lights. It listens to the `{{base_topic}}/power` MQTT topic, interpreting received values ('on' or 'off') and triggering the corresponding Home Assistant service. Check the MQTT In node for the correct topic and adjust it if needed.
+
+![Power Control Flow](https://github.com/Zerk4112/Micropython-MQTT-HASS-Smart-Light-Dimmer/blob/dev/img/Node-Red%20Flow%20-%20Power.png?raw=true)
+
+### Customization Tips
+
+- **MQTT Topics:**
+  - Verify and adjust MQTT In node topics in each flow to match your configuration.
+
+  - **Brightness Values:**
+    - The actual mapping of brightness values occurs in the Micropython script (`boot.py`). Ensure that the values sent via MQTT align with your smart lights' requirements. Modify the Micropython script if necessary.
+
+  - **Further Customization:**
+    - Tailor the flows based on your preferences and the specific characteristics of your smart lights.
+
+### Ideas and Todos
+
+1. **Ping Response Flow**
+
+   Create a flow to respond to pings from the device. If no response is received after a set number of attempts, trigger a notification to users.
+
+2. **Status Check Flow**
+
+   Implement logic in both the Micropython script and a Node-Red flow to check the status of the light entity. If the light entity is "unavailable" or "off," or otherwise unavailable for change requests, put the device in an error state. This flow should be triggered on device boot as well.
+
 ## Contributing
 
 Any contributions you make are greatly appreciated.
