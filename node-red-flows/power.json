@@ -1,0 +1,114 @@
+[
+    {
+        "id": "b0572af0d586f2d1",
+        "type": "api-call-service",
+        "z": "08d1d1834fd2d49b",
+        "name": "Set brightness for light-group",
+        "server": "d2bae819.9842d8",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"brightness\": msg.payload}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 520,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35d433a4f2a11931",
+        "type": "inject",
+        "z": "08d1d1834fd2d49b",
+        "name": "Debugging - Set Brightness to 100",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "100",
+        "payloadType": "num",
+        "x": 220,
+        "y": 360,
+        "wires": [
+            [
+                "b0572af0d586f2d1"
+            ]
+        ]
+    },
+    {
+        "id": "3c11c0aad57c2597",
+        "type": "mqtt in",
+        "z": "08d1d1834fd2d49b",
+        "name": "{{base_topic}}/brightness",
+        "topic": "replace_this_with_base_topic/brightness",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "2c8643dac3ebc02a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 420,
+        "wires": [
+            [
+                "b0572af0d586f2d1"
+            ]
+        ]
+    },
+    {
+        "id": "d2bae819.9842d8",
+        "type": "server",
+        "name": "Home Assistant",
+        "addon": true
+    },
+    {
+        "id": "2c8643dac3ebc02a",
+        "type": "mqtt-broker",
+        "name": "Home Assistant",
+        "broker": "replace_with_your_mqtt_broker_ip_address",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
