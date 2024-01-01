@@ -69,10 +69,6 @@ The `lib` folder contains the following modules:
 - The rotary encoder includes a built-in push button, and it's connected to GPIO 15.
 - The resistors are wired to the 3V3 line, with the LEDs sinking the current. Connect the resistors to the anode (longer leg) of each LED, and the cathodes (shorter legs) to the corresponding pins on the ESP32.
 
-By following these instructions and the provided diagram, you should be able to wire your smart light dimmer successfully. Ensure a common ground among all components and check the power requirements of your LED bar graph to avoid overloading the ESP32.
-
-Certainly! Here's the updated Node-Red setup section with a note about customizing the brightness values in `boot.py`:
-
 ## Node-Red Setup
 
 To seamlessly integrate the Smart Bulb Dimmer with Node-Red and Home Assistant, follow these steps:
