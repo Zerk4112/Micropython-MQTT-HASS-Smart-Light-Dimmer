@@ -89,19 +89,15 @@ To seamlessly integrate the Smart Bulb Dimmer with Node-Red and Home Assistant, 
 
 This flow manages brightness control. It listens to the `{{base_topic}}/brightness` MQTT topic. Note that the actual mapping of brightness values occurs in the Micropython script (`boot.py`). Ensure that the values sent via MQTT align with your smart lights' requirements.
 
-![Brightness Control Flow](/img/Node-Red Flow - Brightness.png)
-
-*Screenshot: Brightness Control Flow.*
+![Brightness Control Flow](https://github.com/Zerk4112/Micropython-MQTT-HASS-Smart-Light-Dimmer/blob/dev/img/Node-Red%20Flow%20-%20Brightness.png?raw=true)
 
 #### 2. Power Control Flow
 
 The Power Control Flow manages the power state of the smart lights. It listens to the `{{base_topic}}/power` MQTT topic, interpreting received values ('on' or 'off') and triggering the corresponding Home Assistant service. Check the MQTT In node for the correct topic and adjust it if needed.
 
-![Power Control Flow](/img/Node-Red Flow - Power.png)
+![Power Control Flow](https://github.com/Zerk4112/Micropython-MQTT-HASS-Smart-Light-Dimmer/blob/dev/img/Node-Red%20Flow%20-%20Power.png?raw=true)
 
-*Screenshot: Power Control Flow.*
-
-### **Customization Tips**
+### Customization Tips
 
 - **MQTT Topics:**
   - Verify and adjust MQTT In node topics in each flow to match your configuration.
